@@ -9,14 +9,14 @@ from time import sleep
 sense = SenseHat()
 
 blue = (0, 0, 255)
-red = (255, 0, 0)
+green = (0, 255, 0)
 
 try:
     while True:
         for event in sense.stick.get_events():
             if event.action == 'pressed':
                 print(event.direction, event.action)
-                sense.show_message(str(event.direction), scroll_speed = 0.1, text_colour = blue, back_colour = red)
+                sense.show_message(str(event.direction), scroll_speed = 0.1, text_colour = blue, back_colour = green)
             sleep(0.05)
 except KeyboardInterrupt:
     print("INTERRUPTED!")
