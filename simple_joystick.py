@@ -16,7 +16,9 @@ try:
         for event in sense.stick.get_events():
             if event.action == 'pressed':
                 print(event.direction, event.action)
-                sense.show_message(str(event.direction), scroll_speed = 0.1, text_colour = blue, back_colour = green)
+                msg = str(event.direction)  # just the direction
+#                msg = ''.join([event.direction, ' ', event.action])
+                sense.show_message(msg, scroll_speed = 0.05, text_colour = blue, back_colour = green)
             sleep(0.05)
 except KeyboardInterrupt:
     print("INTERRUPTED!")
