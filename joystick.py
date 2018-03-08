@@ -21,3 +21,4 @@ try:
 except KeyboardInterrupt:
     print("INTERRUPTED!")
     print("exiting")
+    sense.clear()
